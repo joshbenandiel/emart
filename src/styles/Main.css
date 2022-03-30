@@ -1,0 +1,33 @@
+.main-container {
+  height: 70vh;
+  width: 100%;
+  background: rgb(94,165,214);
+  background: linear-gradient(90deg, rgba(94,165,214,1) 0%, rgba(128,152,223,1) 43%, rgba(154,143,228,1) 100%);
+  display: flex;
+  align-items: center;
+}
+
+.main-text {
+  margin-left: 8%;
+} 
+
+.main-text h1 {
+  color: #fff;
+  font-size: 5em;
+  font-weight: bold;
+
+}
+
+.main-text p {
+  color: #fff;
+  font-size: 3em;
+}
+
+.image-container {
+  position: abslute;
+  top: 0px;
+  right: 20%;
+  
+}
+
+

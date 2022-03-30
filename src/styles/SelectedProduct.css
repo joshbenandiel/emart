@@ -1,0 +1,28 @@
+.item-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.item-image {
+  height: 500px;
+  width: 500px;
+  object-fit: contain;
+}
+
+.item-category-text {
+  color: gray;
+}
+
+.item-rating-text {
+  font-weight: bold;
+}
+
+.item-description {
+  font-size: 18px;
+}
+
+.item-button-section {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}

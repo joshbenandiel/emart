@@ -1,0 +1,26 @@
+.item-image-cart {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+}
+
+.item-wrapper {
+  margin: 20px 0px;
+  background-color: #F8F9FA;
+  padding: 70px;
+}
+
+.button-section-cart {
+  display: flex;
+  gap: 20px;
+}
+
+.button-size {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+}
