@@ -3,16 +3,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import '../styles/SelectedProduct.css'
 import { useNavigate } from "react-router-dom";
 import { addToCart } from '../redux/cartSlice'
+import { Header } from './Header'
 
-export const SelectedProduct = () => {
+export const SelectedProduct = ({executeScroll}) => {
 
   const item = useSelector(state => state.item.item)
-  console.log(item)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
   return (
+    <>
+    <Header executeScroll={executeScroll}/>
     <div className='item-container'>
       <div className="container">
         <div className="row">
@@ -43,6 +45,7 @@ export const SelectedProduct = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

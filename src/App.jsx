@@ -3,8 +3,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
-import { Header } from './components/Header'
 import { Main } from './components/Main'
 import { SelectedProduct } from './components/SelectedProduct'
 import { Cart } from './components/Cart'
@@ -21,13 +19,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header executeScroll={executeScroll}/>
-          <Routes>
-            <Route path='/' element={<Main myRef={myRef}/>}/>
-            <Route path='/products/:itemId' element={<SelectedProduct/>}/> 
-            <Route path='/cart' element={<Cart/>}/>        
-          </Routes>
-        </Router>
+        <Routes>
+          <Route path='/' element={<Main executeScroll={executeScroll} myRef={myRef}/>}/>
+          <Route path='/products/:itemId' element={<SelectedProduct executeScroll={executeScroll}/>}/> 
+          <Route path='/cart' element={<Cart executeScroll={executeScroll}/>}/>        
+        </Routes>
+      </Router>
     </div>
   );
 }

@@ -2,9 +2,10 @@ import React from 'react'
 import { useSelector , useDispatch } from 'react-redux'
 import { increment, decrement } from '../redux/cartSlice'
 import '../styles/Cart.css'
+import { Header } from './Header'
 
 
-export const Cart = () => {
+export const Cart = ({executeScroll}) => {
   
   
   const dispatch = useDispatch()
@@ -13,7 +14,8 @@ export const Cart = () => {
 
 
   return (
-    <div>
+    <>
+    <Header executeScroll={executeScroll}/>
       {cartItem.length === 0 &&
         <div className='item-wrapper'>
           <h1 className=''>Your Cart is Empty</h1>
@@ -50,7 +52,7 @@ export const Cart = () => {
         )
       })}
 
-    </div>
+    </>
   )
 }
 
