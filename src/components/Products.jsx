@@ -1,8 +1,7 @@
 import React , { useState, useEffect, useRef }from 'react'
 import '../styles/Products.css'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setSelectedItem } from '../redux/itemSlice'
-import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
 export const Products = ({myRef}) => {
@@ -11,7 +10,6 @@ export const Products = ({myRef}) => {
   const dispatch = useDispatch()
   const [products, setProducts] = useState()
   const [category, setCategory] = useState('')
-  const [itemId, setItemId] = useState('')
   const [selectedProduct, setSelectedProduct] = useState([])
 
   const navigate = useNavigate();
@@ -24,28 +22,26 @@ export const Products = ({myRef}) => {
 
   useEffect(() => {
     getProducts()
-  },[])
+  })
   
-
-
-  const getSelectedProduct = () => {
-    let items = []
-    products.forEach(item => {
-      if(item.category === category){
-        items.push(item)
-      }
-      setSelectedProduct(items)
-    })
-    if(category === 'all'){
-      setSelectedProduct(products)
-    }
-  }
   
   useEffect(() => {
     if(products){
+      const getSelectedProduct = () => {
+        let items = []
+        products.forEach(item => {
+          if(item.category === category){
+            items.push(item)
+          }
+          setSelectedProduct(items)
+        })
+        if(category === 'all'){
+          setSelectedProduct(products)
+        }
+      }
       getSelectedProduct()
     }
-  },[category])
+  },[category, products])
 
 
 
@@ -55,7 +51,6 @@ export const Products = ({myRef}) => {
   
   
   const getSelectedItem = async(item) => {
-    setItemId(item)
     const path = `https://fakestoreapi.com/products/${item}`
     const result = await axios.get(path)
     dispatch(setSelectedItem(result.data))

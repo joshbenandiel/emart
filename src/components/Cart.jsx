@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector , useDispatch } from 'react-redux'
-import { removeToCart , increment, decrement } from '../redux/cartSlice'
+import { increment, decrement } from '../redux/cartSlice'
 import '../styles/Cart.css'
 
 
